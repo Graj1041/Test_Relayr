@@ -37,5 +37,5 @@ class Test_API:
         # Assert
         assert resp.status_code == 200
         assert_valid_schema(json_data, 'multipleDogs.json')
-        assert len(json_data['message']) <= 50
+        assert (len(json_data['message']) == n if n < 50 else len(json_data['message']) == 50)
         self.logger.info("test_validate_multiple_random_img_dogs_collection completed")
