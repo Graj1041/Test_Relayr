@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "message": [
+                "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_8570.jpg",
+                "https://images.dog.ceo/breeds/hound-afghan/n02088094_4143.jpg",
+                "https://images.dog.ceo/breeds/pitbull/IMG_20190826_121528_876.jpg"
+            ],
+            "status": "success"
+        }
+    ],
+    "required": [
+        "message",
+        "status"
+    ],
+    "properties": {
+        "message": {
+            "$id": "#/properties/message",
+            "type": "array",
+            "title": "The message schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_8570.jpg",
+                    "https://images.dog.ceo/breeds/hound-afghan/n02088094_4143.jpg"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/message/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/message/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_8570.jpg",
+                            "https://images.dog.ceo/breeds/hound-afghan/n02088094_4143.jpg"
+                        ]
+                    }
+                ]
+            }
+        },
+        "status": {
+            "$id": "#/properties/status",
+            "type": "string",
+            "title": "The status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "success"
+            ]
+        }
+    },
+    "additionalProperties": true
+}

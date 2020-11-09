@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "message": "https://images.dog.ceo/breeds/frise-bichon/7.jpg",
+            "status": "success"
+        }
+    ],
+    "required": [
+        "message",
+        "status"
+    ],
+    "properties": {
+        "message": {
+            "$id": "#/properties/message",
+            "type": "string",
+            "title": "The message schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "https://images.dog.ceo/breeds/frise-bichon/7.jpg"
+            ]
+        },
+        "status": {
+            "$id": "#/properties/status",
+            "type": "string",
+            "title": "The status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "success"
+            ]
+        }
+    },
+    "additionalProperties": true
+}
